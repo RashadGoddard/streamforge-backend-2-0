@@ -57,7 +57,6 @@ async function boostStreams(artist, songTitle, platforms) {
           await humanDelay(60, 120); // Live stream duration
           success = true;
           break;
-        // ... Add soundcloud, audiomack (similar flows)
         case 'youtubeVideo':
           await page.goto(`https://www.youtube.com/watch?v=${artist.ids.youtube}`);
           await page.evaluate(() => document.querySelector('.ytp-play-button').click());
@@ -159,7 +158,8 @@ async function trainModel(model, data) {
 function generateDeviceFingerprint(platform) {
   const devices = [
     'Mozilla/5.0 (iPhone; CPU iPhone OS 18_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.2 Mobile/15E148 Safari/604.1',
-    // ... Android, desktop variants
+    'Mozilla/5.0 (Linux; Android 13; SM-G991B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Mobile Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36'
   ];
   return devices[Math.floor(Math.random() * devices.length)];
 }
