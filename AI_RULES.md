@@ -1,4 +1,4 @@
-# AI Rules & Tech Stack
+# StreamForge 2.0 AI Rules & Tech Stack
 
 ## Tech Stack
 
